@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Abdullah Shehata — Cybersecurity Student | Aspiring SOC Analyst</title>
+<meta name="description" content="Abdullah Mohamed Shehata is a fourth-year Computer Science student building toward Security Operations, with networking training and hands-on lab practice in traffic analysis and network defense fundamentals." />
+<meta name="theme-color" content="#0A090E" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  :root{
+    --bg: #0A090E;
+    --surface: #121016;
+    --line: #211D29;
+    --text: #ECEAF2;
+    --text-dim: #9A94AC;
+    --text-faint: #676180;
+    --accent: #B39DFF;
+    --accent-fill: #7C5CFC;
+  }
+  html{ background: var(--bg); }
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .mono{ font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .container-px{ padding-left: 1.5rem; padding-right: 1.5rem; }
+  @media (min-width:768px){ .container-px{ padding-left: 3rem; padding-right: 3rem; } }
+
+  .tag{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.76rem;
+    color: var(--text-dim);
+    background: transparent;
+    border: 1px solid var(--line);
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    white-space: nowrap;
+  }
+
+  .card{
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+  }
+
+  .nav-link{ color: var(--text-dim); transition: color 150ms ease; }
+  .nav-link:hover{ color: var(--text); }
+
+  .accent{ color: var(--accent); }
+
+  .divider{ height: 1px; background: var(--line); }
+
+  .reveal{ opacity: 0; transform: translateY(10px); transition: opacity 500ms ease, transform 500ms ease; }
+  .reveal.in{ opacity: 1; transform: translateY(0); }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity: 1; transform: none; transition: none; }
+    #typeline::after{ display:none; }
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  #typeline::after{
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 1em;
+    background: var(--accent);
+    margin-left: 3px;
+    vertical-align: -1px;
+    animation: blink 1s steps(1) infinite;
+  }
+  @keyframes blink{ 50%{ opacity: 0; } }
+
+  .btn-primary{
+    background: var(--accent-fill);
+    color: #FFFFFF;
+  }
+  .btn-primary:hover{ background: #8C6DFD; }
+
+  .btn-outline{
+    border: 1px solid var(--line);
+    color: var(--text);
+  }
+  .btn-outline:hover{ border-color: #3A3450; }
+
+  .timeline-rail{ position: relative; }
+  .timeline-rail::before{
+    content:'';
+    position:absolute;
+    left: 3px;
+    top: 6px;
+    bottom: 6px;
+    width: 1px;
+    background: var(--line);
+  }
+  .timeline-dot{
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  .timeline-dot.done{ background: var(--text-faint); }
+</style>
+</head>
+<body class="antialiased">
+
+<a href="#main" class="sr-only focus:not-sr-only fixed top-2 left-2 z-50 bg-slate-800 text-white px-3 py-2 rounded mono text-sm">Skip to content</a>
+
+<!-- NAV -->
+<header class="sticky top-0 z-40 backdrop-blur bg-[#0A090E]/90 border-b" style="border-color:var(--line)">
+  <div class="container-px max-w-5xl mx-auto flex items-center justify-between h-14">
+    <a href="#main" class="mono text-sm" style="color:var(--text)">Abdullah <span class="accent">/soc</span></a>
+    <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#labs" class="nav-link">Labs</a>
+      <a href="#training" class="nav-link">Training</a>
+      <a href="#foundation" class="nav-link">Foundation</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <a href="#contact" class="hidden md:inline-flex items-center text-sm" style="color:var(--accent)">
+      Get in touch →
+    </a>
+    <button id="menuBtn" class="md:hidden p-2 text-slate-300" aria-expanded="false" aria-controls="mobileMenu" aria-label="Toggle menu">
+      <i data-lucide="menu" class="w-5 h-5"></i>
+    </button>
+  </div>
+  <div id="mobileMenu" class="md:hidden hidden border-t" style="border-color:var(--line)">
+    <nav class="container-px py-3 flex flex-col gap-3 text-sm" aria-label="Mobile">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#labs" class="nav-link">Labs</a>
+      <a href="#training" class="nav-link">Training</a>
+      <a href="#foundation" class="nav-link">Foundation</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="container-px max-w-5xl mx-auto pt-14 pb-14 md:pt-20 md:pb-16">
+    <div class="grid md:grid-cols-12 gap-10 md:gap-8">
+      <div class="md:col-span-8">
+        <p class="mono text-xs mb-4" style="color:var(--text-faint)">Portfolio</p>
+        <h1 class="text-3xl md:text-4xl font-semibold tracking-tight" style="color:var(--text)">Abdullah Shehata</h1>
+        <p class="mt-2 text-base md:text-lg font-medium accent">Cybersecurity Student | Aspiring SOC Analyst</p>
+        <p class="mt-1 mono text-xs" id="typeline" style="color:var(--text-faint)">watching the network, learning to defend it</p>
+
+        <p class="mt-6 text-base leading-relaxed max-w-lg" style="color:var(--text-dim)">
+          Fourth-year Computer Science student moving toward Security Operations. Grounded in
+          networking fundamentals, comfortable in Linux and Windows, and building judgment through
+          hands-on lab practice rather than theory alone.
+        </p>
+
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          <a href="#contact" class="btn-primary inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm font-medium">
+            Contact me
+          </a>
+          <a href="https://www.linkedin.com/in/abdallah-shehata-61b979316/" target="_blank" rel="noopener" class="btn-outline inline-flex items-center gap-2 px-4 py-2.5 rounded-md text-sm">
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="md:col-span-4 md:pl-6 md:border-l" style="border-color:var(--line)">
+        <p class="mono text-xs mb-3" style="color:var(--text-faint)">Currently</p>
+        <ul class="space-y-2.5 text-sm" style="color:var(--text-dim)">
+          <li>Al-Ahliyya Asyut University, 4th year</li>
+          <li>DEPI — Infrastructure &amp; Security track</li>
+          <li>Asyut, Egypt</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ABOUT -->
+  <section id="about" class="container-px max-w-5xl mx-auto py-14 md:py-16">
+    <div class="grid md:grid-cols-12 gap-8">
+      <div class="md:col-span-3">
+        <h2 class="text-lg font-semibold" style="color:var(--text)">About</h2>
+      </div>
+      <div class="md:col-span-9 space-y-4 text-base leading-relaxed max-w-2xl" style="color:var(--text-dim)">
+        <p>
+          I started in software — writing compilers, building web applications, working through the
+          usual Computer Science curriculum. That background is still the foundation of how I think:
+          in systems, data flow, and edge cases.
+        </p>
+        <p>
+          Somewhere along the way, the more interesting question stopped being how you build something
+          and became how you watch it — what it looks like when something goes wrong. That's what pulled
+          me toward Security Operations: logs, traffic, network behavior, and the discipline of noticing
+          what doesn't belong.
+        </p>
+        <p>
+          I'm not there through job experience yet — I'm there through structured training (DEPI, Cisco
+          Networking Academy) and consistent hands-on lab practice with tools like Wireshark, Packet
+          Tracer, and GNS3. I'd rather be upfront about that than dress it up.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- USP -->
+  <section id="usp" class="container-px max-w-5xl mx-auto py-12 md:py-14">
+    <div class="grid md:grid-cols-12 gap-8">
+      <div class="md:col-span-3">
+        <p class="mono text-xs" style="color:var(--text-faint)">Where I'm headed</p>
+      </div>
+      <div class="md:col-span-9 max-w-2xl">
+        <p class="text-lg leading-snug" style="color:var(--text)">
+          I help security teams get an analyst who already reads networks and systems fluently —
+          built through Computer Science fundamentals, networking training, and hands-on lab
+          practice with real monitoring and analysis tools.
+        </p>
+        <p class="mt-3 text-sm" style="color:var(--text-dim)">
+          Shorter version: a CS student who understands how systems are built, now training to
+          understand how they're monitored and defended.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SKILLS -->
+  <section id="skills" class="container-px max-w-5xl mx-auto py-14 md:py-16">
+    <h2 class="text-lg font-semibold mb-1" style="color:var(--text)">Technical profile</h2>
+    <p class="text-sm mb-8" style="color:var(--text-faint)">Security and networking first — programming is the foundation underneath.</p>
+
+    <div class="grid md:grid-cols-2 gap-x-10 gap-y-8">
+      <div>
+        <h3 class="text-sm font-medium mb-3" style="color:var(--text)">Security &amp; SOC Foundations</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag">Network Traffic Analysis</span>
+          <span class="tag">Linux Fundamentals</span>
+          <span class="tag">Windows OS Fundamentals</span>
+          <span class="tag">Security Concepts</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-sm font-medium mb-3" style="color:var(--text)">Networking</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag">TCP/IP</span>
+          <span class="tag">Routing &amp; Switching</span>
+          <span class="tag">VLANs</span>
+          <span class="tag">OSPF</span>
+          <span class="tag">ACLs</span>
+          <span class="tag">IPv4 / IPv6</span>
+          <span class="tag">DNS</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-sm font-medium mb-3" style="color:var(--text)">Security &amp; Networking Tools</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag">Wireshark</span>
+          <span class="tag">Cisco Packet Tracer</span>
+          <span class="tag">GNS3</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-sm font-medium mb-3" style="color:var(--text-dim)">Programming &amp; CS Foundation</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag">Python</span>
+          <span class="tag">C++</span>
+          <span class="tag">SQL</span>
+          <span class="tag">HTML / CSS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HANDS-ON LABS -->
+  <section id="labs" class="container-px max-w-5xl mx-auto py-14 md:py-16">
+    <h2 class="text-lg font-semibold mb-1" style="color:var(--text)">Hands-on practice</h2>
+    <p class="text-sm mb-8" style="color:var(--text-faint)">Lab environments, not production incidents — practiced deliberately, described honestly.</p>
+
+    <div class="space-y-6">
+      <div class="card p-5">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+          <h3 class="font-medium" style="color:var(--text)">Network simulation</h3>
+          <div class="flex gap-2">
+            <span class="tag">Packet Tracer</span>
+            <span class="tag">GNS3</span>
+          </div>
+        </div>
+        <p class="text-sm" style="color:var(--text-dim)">Configured and troubleshot routed and switched topologies — VLAN segmentation, OSPF routing, and ACL rule design across multi-router topologies.</p>
+      </div>
+
+      <div class="card p-5">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+          <h3 class="font-medium" style="color:var(--text)">Traffic analysis</h3>
+          <div class="flex gap-2">
+            <span class="tag">Wireshark</span>
+          </div>
+        </div>
+        <p class="text-sm" style="color:var(--text-dim)">Captured and inspected TCP/IP and DNS traffic to understand normal protocol behavior.</p>
+      </div>
+
+      <div class="card p-5">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+          <h3 class="font-medium" style="color:var(--text)">Systems practice</h3>
+          <div class="flex gap-2">
+            <span class="tag">Linux</span>
+            <span class="tag">Windows</span>
+          </div>
+        </div>
+        <p class="text-sm" style="color:var(--text-dim)">OS fundamentals, file/permission structures, and baseline security concepts across both platforms.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- TRAINING -->
+  <section id="training" class="container-px max-w-5xl mx-auto py-14 md:py-16">
+    <h2 class="text-lg font-semibold mb-8" style="color:var(--text)">Training &amp; development</h2>
+
+    <div class="timeline-rail pl-6 space-y-6">
+      <div class="flex gap-4">
+        <div class="timeline-dot"></div>
+        <div>
+          <p class="mono text-xs accent mb-0.5">Ongoing</p>
+          <h3 class="font-medium" style="color:var(--text)">Digital Egypt Pioneers Initiative (DEPI)</h3>
+          <p class="text-sm mt-0.5" style="color:var(--text-dim)">Infrastructure &amp; Security track.</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div class="timeline-dot done"></div>
+        <div>
+          <p class="mono text-xs mb-0.5" style="color:var(--text-faint)">Cisco Networking Academy — via NTI</p>
+          <h3 class="font-medium" style="color:var(--text)">Course completions</h3>
+          <p class="text-sm mt-0.5" style="color:var(--text-dim)">Intro to Networks · Switching, Routing &amp; Wireless Essentials · Enterprise Networking, Security &amp; Automation.</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div class="timeline-dot done"></div>
+        <div>
+          <p class="mono text-xs mb-0.5" style="color:var(--text-faint)">Digital Egypt Youth Program — NTI</p>
+          <h3 class="font-medium" style="color:var(--text)">CCNA Routing &amp; Switching</h3>
+          <p class="text-sm mt-0.5" style="color:var(--text-dim)">120 hours — 90 technical, 30 soft skills.</p>
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div class="timeline-dot done"></div>
+        <div>
+          <p class="mono text-xs mb-0.5" style="color:var(--text-faint)">July 2025</p>
+          <h3 class="font-medium" style="color:var(--text)">CIB Summer Program — "The Green Leap"</h3>
+          <p class="text-sm mt-0.5" style="color:var(--text-dim)">Certificate of Attendance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FOUNDATION -->
+  <section id="foundation" class="container-px max-w-5xl mx-auto py-14 md:py-16">
+    <h2 class="text-lg font-semibold mb-1" style="color:var(--text)">Computer Science foundation</h2>
+    <p class="text-sm mb-8" style="color:var(--text-faint)">Supporting technical depth — not the primary career focus.</p>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="card p-5">
+        <h3 class="font-medium mb-1.5" style="color:var(--text)">SocialPy</h3>
+        <p class="text-sm mb-3" style="color:var(--text-dim)">A Python-based compiler / domain-specific language, built from scratch.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag">Lexical Analysis</span>
+          <span class="tag">LL(1) Parser</span>
+          <span class="tag">Semantic Analysis</span>
+          <span class="tag">Python</span>
+        </div>
+      </div>
+      <div class="card p-5">
+        <h3 class="font-medium mb-1.5" style="color:var(--text)">Library Management System</h3>
+        <p class="text-sm mb-3" style="color:var(--text-dim)">A web application for managing library records and transactions.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag">ASP.NET Core MVC</span>
+          <span class="tag">Entity Framework</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- EDUCATION -->
+  <section class="container-px max-w-5xl mx-auto py-10">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+      <div>
+        <h3 class="font-medium" style="color:var(--text)">Bachelor of Computer Science</h3>
+        <p class="text-sm" style="color:var(--text-dim)">Al-Ahliyya Asyut University</p>
+      </div>
+      <p class="mono text-sm" style="color:var(--text-faint)">4th Year — Expected 2027</p>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container-px max-w-5xl mx-auto py-14 md:py-16">
+    <div class="grid md:grid-cols-12 gap-8">
+      <div class="md:col-span-6">
+        <h2 class="text-2xl font-semibold" style="color:var(--text)">Let's talk.</h2>
+        <p class="mt-3 max-w-sm text-sm leading-relaxed" style="color:var(--text-dim)">
+          Open to entry-level SOC Analyst and cybersecurity opportunities, internships, and
+          conversations with people working in defensive security.
+        </p>
+      </div>
+      <div class="md:col-span-6 flex flex-col gap-3 text-sm">
+        <a href="mailto:abdallahshehtot@gmail.com" class="hover:underline w-fit" style="color:var(--text)">abdallahshehtot@gmail.com</a>
+        <a href="tel:+201094747266" class="hover:underline w-fit" style="color:var(--text)">+20 109 474 7266</a>
+        <a href="https://www.linkedin.com/in/abdallah-shehata-61b979316/" target="_blank" rel="noopener" class="hover:underline w-fit" style="color:var(--text)">linkedin.com/in/abdallah-shehata</a>
+        <span style="color:var(--text-dim)">Asyut, Egypt</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="border-t" style="border-color:var(--line)">
+  <div class="container-px max-w-5xl mx-auto py-6 flex flex-col md:flex-row items-center justify-between gap-2 text-xs" style="color:var(--text-faint)">
+    <p>© <span id="year"></span> Abdullah Mohamed Shehata</p>
+    <p class="mono">Asyut, Egypt</p>
+  </div>
+</footer>
+
+<script>
+  lucide.createIcons();
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(!isHidden));
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }));
+
+  const revealEls = document.querySelectorAll('section');
+  revealEls.forEach(el => el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => io.observe(el));
+
+  const typeline = document.getElementById('typeline');
+  const fullText = typeline.textContent;
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    typeline.textContent = '';
+    let i = 0;
+    const type = () => {
+      if (i <= fullText.length) {
+        typeline.textContent = fullText.slice(0, i);
+        i++;
+        setTimeout(type, 24);
+      }
+    };
+    type();
+  }
+</script>
+
+</body>
+</html>
